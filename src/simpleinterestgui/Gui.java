@@ -3,6 +3,8 @@ package simpleinterestgui;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -98,7 +100,30 @@ public class Gui {
         Solve.setCursor(new Cursor(12));
         Solve.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2, true));
         panel.add(Solve);
+
+//****** Action Listener *******************************************************
         
+        Clear.addActionListener(new ActionListener() {
+
+            public void actionPerformed(ActionEvent clear) {
+                Principal.setText("");
+                Rate.setText("");
+                Interest.setText("");
+            }
+        });
+        
+        Solve.addActionListener(new ActionListener() {
+            
+            public void actionPerformed(ActionEvent solve){
+                if (Principal.getText().equals("")) {
+                    
+                } else if(Rate.getText().equals("")){
+                    
+                } else if(Interest.getText().equals("")){
+                
+                }
+            }
+        });
         
         frame.setVisible(true);
     }
