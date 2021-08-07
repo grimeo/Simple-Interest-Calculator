@@ -16,6 +16,8 @@ public class Gui {
     
     InputData input = new InputData();
     
+    SolveProblem sp;
+    
     Gui(){
         JFrame frame = new JFrame("Simple Interest");
         JPanel panel = new JPanel();
@@ -123,6 +125,10 @@ public class Gui {
                         
                         input.setInterest(Double.parseDouble(Interest.getText()));
                         input.setRate(Double.parseDouble(Rate.getText()));
+                        
+                        sp = new SolvePrincipal();
+                        
+                        Principal.setText(String.valueOf(input.getPrincipal()));
 
                     } else if(Rate.getText().equals("")){
 
