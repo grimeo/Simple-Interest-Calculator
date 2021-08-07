@@ -14,6 +14,8 @@ import javax.swing.JTextField;
 
 public class Gui {
     
+    InputData input = new InputData();
+    
     Gui(){
         JFrame frame = new JFrame("Simple Interest");
         JPanel panel = new JPanel();
@@ -115,13 +117,21 @@ public class Gui {
         Solve.addActionListener(new ActionListener() {
             
             public void actionPerformed(ActionEvent solve){
-                if (Principal.getText().equals("")) {
-                    
-                } else if(Rate.getText().equals("")){
-                    
-                } else if(Interest.getText().equals("")){
                 
+                try {
+                    if (Principal.getText().equals("")) {
+                        
+                        input.setInterest(Double.parseDouble(Interest.getText()));
+                        input.setRate(Double.parseDouble(Rate.getText()));
+
+                    } else if(Rate.getText().equals("")){
+
+                    } else if(Interest.getText().equals("")){
+
+                    }
+                } catch (Exception e) {
                 }
+                
             }
         });
         

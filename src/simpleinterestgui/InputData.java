@@ -2,32 +2,32 @@ package simpleinterestgui;
 
 public class InputData {
     
-    private static int principal;
-    private static int rate;
-    private static int interest;
+    private double principal;
+    private double rate;
+    private double interest;
     
     InputData(){
         
     }
     
-    public int getInterest(){
+    public double getInterest(){
         return interest;
     }
-    public void setInterest(int i){
+    public void setInterest(double i){
         interest = i;
     }
     
-    public int getRate(){
+    public double getRate(){
         return rate;
     }
-    public void setRate(int r){
+    public void setRate(double r){
         rate = r;
     }
     
-    public int getPrincipal(){
+    public double getPrincipal(){
         return principal;
     }
-    public void setPrincipal(int p){
+    public void setPrincipal(double p){
         principal = p;
     }
     
