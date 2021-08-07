@@ -26,10 +26,12 @@ public class Gui {
         
         JLabel PrincipalLabel = new JLabel("Principal");
         JLabel RateLabel = new JLabel("Rate");
+        JLabel TimeLabel = new JLabel("Time");
         JLabel InterestLabel = new JLabel("Interest");
         
         JTextField Principal = new JTextField();
         JTextField Rate = new JTextField();
+        JTextField Time = new JTextField();
         JTextField Interest = new JTextField();
         
         JButton Clear = new JButton("Clear");
@@ -65,7 +67,12 @@ public class Gui {
         RateLabel.setFont(new Font("berlin sans fb", Font.PLAIN, 25));
         panel.add(RateLabel);
         
-        InterestLabel.setBounds(120, 240, 100, 30);
+        TimeLabel.setBounds(140, 240, 100, 30);
+        TimeLabel.setBorder(null);
+        TimeLabel.setFont(new Font("berlin sans fb", Font.PLAIN, 25));
+        panel.add(TimeLabel);
+        
+        InterestLabel.setBounds(120, 300, 100, 30);
         InterestLabel.setBorder(null);
         InterestLabel.setFont(new Font("berlin sans fb", Font.PLAIN, 25));
         panel.add(InterestLabel);
@@ -82,14 +89,19 @@ public class Gui {
         Rate.setFont(new Font("berlin sans fb", Font.PLAIN, 25));
         panel.add(Rate);
                
+        Time.setBorder(null);
+        Time.setBounds(220, 240,200, 30);
+        Time.setFont(new Font("berlin sans fb", Font.PLAIN, 25));     
+        panel.add(Time);
+        
         Interest.setBorder(null);
-        Interest.setBounds(220, 240,200, 30);
+        Interest.setBounds(220, 300,200, 30);
         Interest.setFont(new Font("berlin sans fb", Font.PLAIN, 25));     
         panel.add(Interest);
         
 //****** Buttons ***************************************************************        
         
-        Clear.setBounds(280, 330, 100, 40);
+        Clear.setBounds(280, 360, 100, 40);
         Clear.setFont(new Font("berlin sans fb", Font.PLAIN, 25));
         Clear.setBackground(null);
         Clear.setFocusable(false);
@@ -97,7 +109,7 @@ public class Gui {
         Clear.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2, true));
         panel.add(Clear);
         
-        Solve.setBounds(100, 330, 100, 40);
+        Solve.setBounds(100, 360, 100, 40);
         Solve.setFont(new Font("berlin sans fb", Font.PLAIN, 25));
         Solve.setBackground(null);
         Solve.setFocusable(false);
@@ -112,6 +124,7 @@ public class Gui {
             public void actionPerformed(ActionEvent clear) {
                 Principal.setText("");
                 Rate.setText("");
+                Time.setText("");
                 Interest.setText("");
             }
         });
