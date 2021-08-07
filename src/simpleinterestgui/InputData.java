@@ -2,10 +2,10 @@ package simpleinterestgui;
 
 public class InputData {
     
-    private double principal;
-    private double rate;
-    private double time;
-    private double interest;
+    private static double principal;
+    private static double rate;
+    private static double time;
+    private static double interest;
     
     InputData(){
         
@@ -43,7 +43,13 @@ public class InputData {
     
 //****** Strategy ****************************************************************    
     
+    SolveProblem sp;
     
+    public void solveProb(){
+        sp.solve();
+    }
     
-    
+    public void changeFormula(SolveProblem formula){
+        this.sp = formula;
+    }
 }

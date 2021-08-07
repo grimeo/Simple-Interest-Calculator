@@ -12,11 +12,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class Gui {
-    
-    InputData input = new InputData();
-    
-    SolveProblem sp;
+public class Gui extends InputData{
     
     Gui(){
         JFrame frame = new JFrame("Simple Interest");
@@ -134,32 +130,53 @@ public class Gui {
             public void actionPerformed(ActionEvent solve){
                 
                 try {
+                    
                     if (Principal.getText().equals("")) {
                         
-                        input.setInterest(Double.parseDouble(Interest.getText()));
-                        input.setRate(Double.parseDouble(Rate.getText()));
+                        setInterest(Double.parseDouble(Interest.getText()));
+                        setRate(Double.parseDouble(Rate.getText()));
+                        setTime(Double.parseDouble(Time.getText()));
                         
-                        sp = new SolvePrincipal();
-                        sp.solve();
+                        changeFormula(new SolvePrincipal());
+                        solveProb();
                         
-                        Principal.setText(String.valueOf(input.getPrincipal()));
-
+                        Principal.setText(String.valueOf(getPrincipal()));
+                        
                     } else if (Rate.getText().equals("")){
 
+                        setPrincipal(Double.parseDouble(Principal.getText()));
+                        setInterest(Double.parseDouble(Interest.getText()));
+                        setTime(Double.parseDouble(Time.getText()));
+                        
+                        changeFormula(new SolveRate());
+                        solveProb();
+                        
+                        Rate.setText(String.valueOf(getRate()));
+                        
                     } else if (Time.getText().equals("")){
 
+                        setPrincipal(Double.parseDouble(Principal.getText()));
+                        setRate(Double.parseDouble(Rate.getText()));
+                        setInterest(Double.parseDouble(Interest.getText()));
+                        
+                        changeFormula(new SolveTime());
+                        solveProb();
+                        
+                        Time.setText(String.valueOf(getTime()));
+                        
                     } else if (Interest.getText().equals("")){
                         
-                        input.setPrincipal(Double.parseDouble(Principal.getText()));
-                        input.setRate(Double.parseDouble(Rate.getText()));
-                        input.setTime(Double.parseDouble(Time.getText()));
+                        setPrincipal(Double.parseDouble(Principal.getText()));
+                        setRate(Double.parseDouble(Rate.getText()));
+                        setTime(Double.parseDouble(Time.getText()));
                         
-                        sp = new SolveInterest();
-                        sp.solve();
+                        changeFormula(new SolveInterest());
+                        solveProb();
                         
-                        Interest.setText(String.valueOf(input.getInterest()));
+                        Interest.setText(String.valueOf(getInterest()));
                         
                     }
+                    
                 } catch (Exception e) {
                 }
                 
