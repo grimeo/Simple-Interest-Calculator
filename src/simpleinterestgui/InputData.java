@@ -11,6 +11,8 @@ public class InputData {
         
     }
     
+//****** Encapsulation *********************************************************
+    
     public double getPrincipal(){
         return principal;
     }
@@ -39,7 +41,8 @@ public class InputData {
         interest = i;
     }
     
-   
+//****** Strategy ****************************************************************    
+    
     
     
     

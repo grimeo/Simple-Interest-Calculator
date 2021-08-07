@@ -140,13 +140,25 @@ public class Gui {
                         input.setRate(Double.parseDouble(Rate.getText()));
                         
                         sp = new SolvePrincipal();
+                        sp.solve();
                         
                         Principal.setText(String.valueOf(input.getPrincipal()));
 
-                    } else if(Rate.getText().equals("")){
+                    } else if (Rate.getText().equals("")){
 
-                    } else if(Interest.getText().equals("")){
+                    } else if (Time.getText().equals("")){
 
+                    } else if (Interest.getText().equals("")){
+                        
+                        input.setPrincipal(Double.parseDouble(Principal.getText()));
+                        input.setRate(Double.parseDouble(Rate.getText()));
+                        input.setTime(Double.parseDouble(Time.getText()));
+                        
+                        sp = new SolveInterest();
+                        sp.solve();
+                        
+                        Interest.setText(String.valueOf(input.getInterest()));
+                        
                     }
                 } catch (Exception e) {
                 }

@@ -9,22 +9,24 @@ interface SolveProblem{
     public void solve();
 }
 
-class SolveInterest implements SolveProblem{
+class SolveInterest extends InputData implements SolveProblem{
 
     InputData input = new InputData();
     
     @Override
     public void solve() {
+        Double p = input.getPrincipal();
         Double r = input.getRate();
         Double t = input.getTime();
-        Double i = input.getInterest();
         
-        Double p = (r*t)/i;
+        Double rp = p * r;
+        Double interest =  rp * t;
+        input.setInterest(interest);
     }
     
 }
 
-class SolveRate implements SolveProblem{
+class SolveRate extends InputData implements SolveProblem{
 
     InputData input = new InputData();
     
@@ -35,7 +37,19 @@ class SolveRate implements SolveProblem{
     
 }
 
-class SolvePrincipal implements SolveProblem{
+
+class SolveTime extends InputData implements SolveProblem{
+
+    InputData input = new InputData();
+    
+    @Override
+    public void solve() {
+        
+    }
+    
+}
+
+class SolvePrincipal extends InputData implements SolveProblem{
 
     InputData input = new InputData();
     
